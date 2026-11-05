@@ -42,7 +42,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "https://pi.tail7da105.ts.net:10000/",
+          "uri": "https://pi.tail7da105.ts.net/music",
           "sslCertificateType": "Trusted"
         },
         "interfaces": [
