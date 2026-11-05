@@ -92,7 +92,9 @@
           "name": "NaviSonicPlayPlaylist",
           "samples": [
             "play the {playlist} playlist",
-            "start the {playlist} playlist"
+            "start the {playlist} playlist",
+            "play {playlist}",
+            "play my {playlist}"
           ],
           "slots": [
             {
@@ -170,7 +172,13 @@
           "values": [
             {
               "name": {
-                "value": "Favourites"
+                "value": "Emils Lieblingslieder",
+                "synonyms": [
+                  "favourites",
+                  "Emils favourites",
+                  "the hits",
+                  "hits"
+                ]
               }
             },
             {

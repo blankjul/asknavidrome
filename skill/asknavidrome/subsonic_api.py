@@ -2,6 +2,7 @@ from hashlib import md5
 from typing import Union
 import logging
 import random
+import re
 import secrets
 
 import libsonic
@@ -108,9 +109,19 @@ class SubsonicConnection:
         self.logger.debug('In function search_playlist()')
 
         playlist_dict = self.conn.getPlaylists()
+        playlists = playlist_dict.get('playlists', {}).get('playlist', [])
 
-        # Search the list of dictionaries for a playlist with a name that matches the search term
-        playlist_id_list = [item.get('id') for item in playlist_dict['playlists']['playlist'] if item.get('name').lower() == term.lower()]
+        def key(text: str) -> str:
+            # "Emils Lieblingslieder", "die Lieblingslieder" and "lieblingslieder" are the same list
+            words = re.sub(r'[^a-z0-9äöüß ]+', ' ', text.lower()).split()
+            return ' '.join(w for w in words if w not in ('die', 'der', 'das', 'meine', 'mein', 'emils', 'emil', 'playlist', 'liste', 'the', 'my'))
+
+        # Exact name first, then the same name ignoring filler words, then one name containing the other
+        playlist_id_list = [item.get('id') for item in playlists if item.get('name').lower() == term.lower()]
+        if not playlist_id_list:
+            playlist_id_list = [item.get('id') for item in playlists if key(item.get('name')) == key(term) and key(term)]
+        if not playlist_id_list:
+            playlist_id_list = [item.get('id') for item in playlists if key(term) and (key(term) in key(item.get('name')) or key(item.get('name')) in key(term)) and key(item.get('name'))]
 
         if len(playlist_id_list) == 1:
             # We have matched the playlist return it

@@ -99,7 +99,12 @@
           "samples": [
             "spiele die Playlist {playlist}",
             "starte die Playlist {playlist}",
-            "spiele meine {playlist} Playlist"
+            "spiele meine {playlist} Playlist",
+            "spiele {playlist}",
+            "spiele die {playlist}",
+            "spiele meine {playlist}",
+            "spiele Emils {playlist}",
+            "mach {playlist} an"
           ],
           "slots": [
             {
@@ -140,9 +145,9 @@
         {
           "name": "NaviSonicPlayFavouriteSongs",
           "samples": [
-            "spiele meine Lieblingslieder",
             "spiele meine Favoriten",
-            "spiele meine Lieblingssongs"
+            "spiele meine Lieblingssongs",
+            "spiele meine markierten Lieder"
           ]
         },
         {
@@ -186,7 +191,15 @@
           "values": [
             {
               "name": {
-                "value": "Lieblingslieder"
+                "value": "Emils Lieblingslieder",
+                "synonyms": [
+                  "Lieblingslieder",
+                  "Emils Lieblinge",
+                  "Emils Hits",
+                  "die Hits",
+                  "Hits",
+                  "meine Lieblingslieder"
+                ]
               }
             },
             {
@@ -196,7 +209,11 @@
             },
             {
               "name": {
-                "value": "Einschlafen"
+                "value": "Einschlafen",
+                "synonyms": [
+                  "Einschlaflieder",
+                  "Schlaflieder"
+                ]
               }
             }
           ]
