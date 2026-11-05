@@ -1,0 +1,63 @@
+{
+  "manifest": {
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "isAvailableWorldwide": false,
+      "distributionCountries": [],
+      "category": "STREAMING_SERVICE",
+      "testingInstructions": "Private skill for personal use. It plays the owner's own music from a self-hosted Navidrome server.",
+      "locales": {
+        "de-DE": {
+          "name": "Emils Jukebox",
+          "summary": "Spielt Emils Lieblingsmusik vom eigenen Musikserver.",
+          "description": "Spielt Musik von einem eigenen Navidrome-Server. Sag zum Beispiel \"Alexa, öffne Emils Jukebox\" und dann \"spiele Musik von Coldplay\".",
+          "examplePhrases": [
+            "Alexa, öffne Emils Jukebox",
+            "Alexa, öffne Emils Jukebox und spiele zufällige Musik",
+            "Alexa, öffne Emils Jukebox und spiele Musik von Coldplay"
+          ],
+          "keywords": [
+            "Lieder",
+            "Kinder",
+            "Jukebox"
+          ]
+        },
+        "en-US": {
+          "name": "Emils Jukebox",
+          "summary": "Plays your own music from a self-hosted server.",
+          "description": "Plays music from a self-hosted Navidrome server. Say \"Alexa, open Emils Jukebox\", then \"play music by Coldplay\".",
+          "examplePhrases": [
+            "Alexa, open Emils Jukebox",
+            "Alexa, open Emils Jukebox and play random music",
+            "Alexa, open Emils Jukebox and play music by Coldplay"
+          ],
+          "keywords": [
+            "songs",
+            "kids",
+            "jukebox"
+          ]
+        }
+      }
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "https://pi.tail7da105.ts.net:10000/",
+          "sslCertificateType": "Trusted"
+        },
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          }
+        ]
+      }
+    },
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    }
+  }
+}

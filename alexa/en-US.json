@@ -1,0 +1,191 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "emils jukebox",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": []
+        },
+        {
+          "name": "NaviSonicPlayMusicByArtist",
+          "samples": [
+            "play songs by {artist}",
+            "play music by {artist}",
+            "play {artist}",
+            "put on {artist}"
+          ],
+          "slots": [
+            {
+              "name": "artist",
+              "type": "AMAZON.Artist"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlayAlbumByArtist",
+          "samples": [
+            "play the album {album}",
+            "play the album {album} by {artist}"
+          ],
+          "slots": [
+            {
+              "name": "album",
+              "type": "AMAZON.MusicAlbum"
+            },
+            {
+              "name": "artist",
+              "type": "AMAZON.Artist"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlaySongByArtist",
+          "samples": [
+            "play the song {song} by {artist}",
+            "play {song} by {artist}"
+          ],
+          "slots": [
+            {
+              "name": "song",
+              "type": "AMAZON.MusicRecording"
+            },
+            {
+              "name": "artist",
+              "type": "AMAZON.Artist"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlayPlaylist",
+          "samples": [
+            "play the {playlist} playlist",
+            "start the {playlist} playlist"
+          ],
+          "slots": [
+            {
+              "name": "playlist",
+              "type": "playlist_names"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicSongDetails",
+          "samples": [
+            "what is playing",
+            "who is singing",
+            "what song is this",
+            "which album is this",
+            "who sings this"
+          ]
+        },
+        {
+          "name": "NaviSonicStarSong",
+          "samples": [
+            "add this song to my favourites",
+            "like this song",
+            "star this song"
+          ]
+        },
+        {
+          "name": "NaviSonicUnstarSong",
+          "samples": [
+            "remove this song from favourites",
+            "I don't like this song",
+            "unstar this song"
+          ]
+        },
+        {
+          "name": "NaviSonicPlayFavouriteSongs",
+          "samples": [
+            "play my favourite songs",
+            "play my starred songs"
+          ]
+        },
+        {
+          "name": "NaviSonicPlayMusicByGenre",
+          "samples": [
+            "play {genre} music",
+            "play {genre} songs"
+          ],
+          "slots": [
+            {
+              "name": "genre",
+              "type": "AMAZON.Genre"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlayMusicRandom",
+          "samples": [
+            "play random music",
+            "play a mix of songs",
+            "surprise me"
+          ]
+        },
+        {
+          "name": "NaviSonicRandomiseQueue",
+          "samples": [
+            "shuffle",
+            "shuffle the queue",
+            "randomise"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "playlist_names",
+          "values": [
+            {
+              "name": {
+                "value": "Favourites"
+              }
+            },
+            {
+              "name": {
+                "value": "Kids"
+              }
+            },
+            {
+              "name": {
+                "value": "Bedtime"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

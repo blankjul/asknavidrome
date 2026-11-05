@@ -1,0 +1,207 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "emils jukebox",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": []
+        },
+        {
+          "name": "NaviSonicPlayMusicByArtist",
+          "samples": [
+            "spiele Musik von {artist}",
+            "spiele Lieder von {artist}",
+            "spiele Songs von {artist}",
+            "spiele {artist}",
+            "Musik von {artist}",
+            "ich möchte {artist} hören",
+            "mach {artist} an"
+          ],
+          "slots": [
+            {
+              "name": "artist",
+              "type": "AMAZON.Artist"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlayAlbumByArtist",
+          "samples": [
+            "spiele das Album {album}",
+            "spiele das Album {album} von {artist}",
+            "spiel das Album {album}",
+            "starte das Album {album}"
+          ],
+          "slots": [
+            {
+              "name": "album",
+              "type": "AMAZON.MusicAlbum"
+            },
+            {
+              "name": "artist",
+              "type": "AMAZON.Artist"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlaySongByArtist",
+          "samples": [
+            "spiele das Lied {song} von {artist}",
+            "spiele den Song {song} von {artist}",
+            "spiele {song} von {artist}"
+          ],
+          "slots": [
+            {
+              "name": "song",
+              "type": "AMAZON.MusicRecording"
+            },
+            {
+              "name": "artist",
+              "type": "AMAZON.Artist"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlayPlaylist",
+          "samples": [
+            "spiele die Playlist {playlist}",
+            "starte die Playlist {playlist}",
+            "spiele meine {playlist} Playlist"
+          ],
+          "slots": [
+            {
+              "name": "playlist",
+              "type": "playlist_names"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicSongDetails",
+          "samples": [
+            "was läuft gerade",
+            "wer singt das",
+            "welches Lied ist das",
+            "wie heißt dieses Lied",
+            "welches Album ist das",
+            "von wem ist das",
+            "was ist das für ein Lied"
+          ]
+        },
+        {
+          "name": "NaviSonicStarSong",
+          "samples": [
+            "markiere dieses Lied als Favorit",
+            "das Lied gefällt mir",
+            "füge das Lied zu meinen Favoriten hinzu",
+            "merk dir dieses Lied"
+          ]
+        },
+        {
+          "name": "NaviSonicUnstarSong",
+          "samples": [
+            "entferne das Lied aus meinen Favoriten",
+            "das Lied gefällt mir nicht mehr",
+            "das mag ich nicht mehr"
+          ]
+        },
+        {
+          "name": "NaviSonicPlayFavouriteSongs",
+          "samples": [
+            "spiele meine Lieblingslieder",
+            "spiele meine Favoriten",
+            "spiele meine Lieblingssongs"
+          ]
+        },
+        {
+          "name": "NaviSonicPlayMusicByGenre",
+          "samples": [
+            "spiele {genre} Musik",
+            "spiele Musik im Stil {genre}",
+            "spiele {genre}"
+          ],
+          "slots": [
+            {
+              "name": "genre",
+              "type": "AMAZON.Genre"
+            }
+          ]
+        },
+        {
+          "name": "NaviSonicPlayMusicRandom",
+          "samples": [
+            "spiele zufällige Musik",
+            "spiele einen Mix",
+            "spiele irgendwas",
+            "überrasch mich",
+            "spiele etwas",
+            "zufällige Lieder"
+          ]
+        },
+        {
+          "name": "NaviSonicRandomiseQueue",
+          "samples": [
+            "mische die Wiedergabe",
+            "zufällige Reihenfolge",
+            "misch die Lieder",
+            "shuffle"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "playlist_names",
+          "values": [
+            {
+              "name": {
+                "value": "Lieblingslieder"
+              }
+            },
+            {
+              "name": {
+                "value": "Kinderlieder"
+              }
+            },
+            {
+              "name": {
+                "value": "Einschlafen"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

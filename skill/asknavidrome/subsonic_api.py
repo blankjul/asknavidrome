@@ -11,7 +11,8 @@ class SubsonicConnection:
     """Class with methods to interact with Subsonic API compatible media servers
     """
 
-    def __init__(self, server_url: str, user: str, passwd: str, port: int, api_location: str, api_version: str) -> None:
+    def __init__(self, server_url: str, user: str, passwd: str, port: int, api_location: str, api_version: str,
+                 public_url: str = None, public_port: int = None, public_api_location: str = None) -> None:
         """
         :param str server_url: The URL of the Subsonic API compatible media server
         :param str user: Username to authenticate against the API
@@ -19,6 +20,10 @@ class SubsonicConnection:
         :param int port: Port the Subsonic compatible server is listening on
         :param str api_location: Path to the API, this is appended to server_url
         :param str api_version: The version of the Subsonic API that is in use
+        :param str public_url: Address Alexa uses to fetch the audio (defaults to server_url). Needed when this
+            service reaches Navidrome locally but the Echo has to use a public address.
+        :param int public_port: Port of the public address (defaults to port)
+        :param str public_api_location: API path of the public address (defaults to api_location)
         :return: None
         """
 
@@ -30,6 +35,9 @@ class SubsonicConnection:
         self.port = port
         self.api_location = api_location
         self.api_version = api_version
+        self.public_url = public_url or server_url
+        self.public_port = public_port or port
+        self.public_api_location = public_api_location if public_api_location is not None else api_location
 
         self.conn = libsonic.Connection(self.server_url,
                                         self.user,
@@ -369,7 +377,7 @@ class SubsonicConnection:
         # This creates a multiline f string, uri contains a single line with both
         # f strings.
         uri = (
-            f'{self.server_url}:{self.port}{self.api_location}/stream.view?f=json&v={self.api_version}&c=AskNavidrome&u='
+            f'{self.public_url}:{self.public_port}{self.public_api_location}/stream.view?f=json&v={self.api_version}&c=AskNavidrome&u='
             f'{self.user}&s={salt}&t={auth_token.hexdigest()}&id={id}'
         )
 
